@@ -5,13 +5,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>KORESH MICHAEL</title>
+<title>Koresh Michael | My Future Plan Is Big</title>
+
+<meta name="description"
+content="Koresh Michael — CSE Student, Creative Editor, Developer and Future IAS Officer.">
 
 <style>
-
-/* =========================
-   BASIC
-========================= */
 
 *{
     margin:0;
@@ -20,22 +19,83 @@
     scroll-behavior:smooth;
 }
 
+:root{
+    --bg:#040404;
+    --card:rgba(255,255,255,0.05);
+    --line:rgba(255,255,255,0.12);
+    --white:#ffffff;
+    --muted:#8d8d8d;
+    --accent:#00eaff;
+}
+
 body{
-    background:#050505;
-    color:#ffffff;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--bg);
+    color:white;
+    overflow-x:hidden;
 }
 
 /* =========================
-   NAVBAR
+   LOADER
+========================= */
+
+.loader{
+    position:fixed;
+    inset:0;
+    background:#030303;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    animation:loaderHide 1s ease 2s forwards;
+}
+
+.loader-text{
+    text-align:center;
+}
+
+.loader-text h2{
+    font-size:42px;
+    letter-spacing:8px;
+    color:var(--accent);
+    animation:loaderPulse 1s infinite alternate;
+}
+
+.loader-text p{
+    margin-top:12px;
+    color:#666;
+    letter-spacing:5px;
+    font-size:10px;
+}
+
+@keyframes loaderHide{
+    to{
+        opacity:0;
+        visibility:hidden;
+    }
+}
+
+@keyframes loaderPulse{
+    from{
+        opacity:.3;
+        transform:scale(.97);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+/* =========================
+   NAVIGATION
 ========================= */
 
 nav{
-    position:sticky;
+    position:fixed;
     top:0;
+    left:0;
+    width:100%;
     z-index:1000;
-
-    background:#090909;
 
     padding:18px 7%;
 
@@ -43,31 +103,34 @@ nav{
     justify-content:space-between;
     align-items:center;
 
-    border-bottom:1px solid #222;
+    background:rgba(4,4,4,.75);
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid var(--line);
 }
 
 .logo{
-    font-family:Georgia, serif;
-    font-size:22px;
-    font-weight:bold;
+    font-size:21px;
+    font-weight:900;
     letter-spacing:3px;
-    color:#00eaff;
+    color:var(--accent);
 }
 
 nav ul{
-    list-style:none;
     display:flex;
-    gap:22px;
+    gap:24px;
+    list-style:none;
 }
 
 nav a{
     color:#aaa;
     text-decoration:none;
-    font-size:14px;
+    font-size:13px;
+    transition:.3s;
 }
 
 nav a:hover{
-    color:#00eaff;
+    color:var(--accent);
 }
 
 /* =========================
@@ -75,36 +138,87 @@ nav a:hover{
 ========================= */
 
 #home{
-    min-height:92vh;
+    min-height:100vh;
 
     display:flex;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
 
     text-align:center;
 
-    padding:40px 20px;
+    position:relative;
+    overflow:hidden;
 
     background:
     radial-gradient(
-        circle at center,
-        #07353d 0%,
-        #050505 45%,
-        #050505 100%
-    );
+        circle at 50% 40%,
+        rgba(0,234,255,.16),
+        transparent 30%
+    ),
+    #040404;
+}
+
+/* glowing circles */
+
+#home::before{
+    content:"";
+
+    position:absolute;
+
+    width:620px;
+    height:620px;
+
+    border:1px solid rgba(0,234,255,.13);
+
+    border-radius:50%;
+
+    animation:rotateCircle 16s linear infinite;
+}
+
+#home::after{
+    content:"";
+
+    position:absolute;
+
+    width:900px;
+    height:900px;
+
+    border:1px solid rgba(255,255,255,.04);
+
+    border-radius:50%;
+}
+
+@keyframes rotateCircle{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
 }
 
 .hero{
-    max-width:1000px;
+    position:relative;
+    z-index:5;
+
+    max-width:1100px;
+
+    padding:120px 25px 60px;
 }
 
-/* SMALL TITLE */
+.hero-tag{
+    color:var(--accent);
 
-.small-title{
-    font-size:12px;
-    letter-spacing:6px;
-    color:#00eaff;
-    margin-bottom:25px;
+    font-size:11px;
+
+    letter-spacing:5px;
+
+    margin-bottom:28px;
+
+    animation:fadeUp 1s ease;
 }
 
 /* MAIN NAME */
@@ -116,13 +230,15 @@ nav a:hover{
     "Times New Roman",
     serif;
 
-    font-size:clamp(65px,13vw,150px);
+    font-size:clamp(65px,14vw,170px);
 
-    line-height:.85;
-
-    letter-spacing:-6px;
+    line-height:.78;
 
     font-weight:900;
+
+    letter-spacing:-8px;
+
+    animation:fadeUp 1.2s ease;
 }
 
 .hero h1 span{
@@ -131,63 +247,1646 @@ nav a:hover{
 
     color:transparent;
 
-    -webkit-text-stroke:1px #ffffff;
+    -webkit-text-stroke:1.2px white;
+
+    text-shadow:
+    0 0 30px rgba(0,234,255,.12);
 }
 
-/* FUTURE PLAN */
+/* =========================
+   FUTURE PLAN
+========================= */
 
-.future{
+.future-plan{
 
-    margin-top:45px;
-}
-
-/* SMALL FONT */
-
-.future .small{
-
-    display:block;
-
-    font-family:Arial,sans-serif;
-
-    font-size:13px;
-
-    letter-spacing:8px;
-
-    color:#777;
-
-    margin-bottom:12px;
-}
-
-/* BIG FONT */
-
-.future h2{
+    margin:45px auto 18px;
 
     font-family:
     Georgia,
     "Times New Roman",
     serif;
 
-    font-size:clamp(45px,8vw,85px);
+    font-size:clamp(30px,5vw,65px);
+
+    font-weight:900;
 
     font-style:italic;
 
-    font-weight:bold;
+    letter-spacing:2px;
 
-    letter-spacing:3px;
+    line-height:1.05;
 
-    color:#00eaff;
+    background:
+    linear-gradient(
+        90deg,
+        #ffffff,
+        #00eaff,
+        #ffffff
+    );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
 
     text-shadow:
-    0 0 15px rgba(0,234,255,.5),
-    0 0 35px rgba(0,234,255,.2);
+    0 0 18px rgba(0,234,255,.18),
+    0 0 40px rgba(0,234,255,.08);
+
+    animation:
+    futureGlow
+    3s
+    ease-in-out
+    infinite
+    alternate;
 }
 
-.hero-text{
+.future-plan span{
+
+    display:block;
+
+    font-family:Arial,sans-serif;
+
+    font-size:.28em;
+
+    font-style:normal;
+
+    font-weight:600;
+
+    letter-spacing:8px;
+
+    color:#777;
+
+    margin-bottom:13px;
+}
+
+@keyframes futureGlow{
+
+    from{
+        transform:scale(1);
+        filter:brightness(.9);
+    }
+
+    to{
+        transform:scale(1.025);
+        filter:brightness(1.2);
+    }
+
+}
+
+/* HERO DESCRIPTION */
+
+.hero-description{
 
     max-width:650px;
 
-    margin:25px auto 0;
+    margin:auto;
+
+    color:#8d8d8d;
+
+    font-size:16px;
+
+    line-height:1.8;
+
+}
+
+/* BUTTONS */
+
+.buttons{
+
+    margin-top:35px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+}
+
+.btn{
+
+    padding:15px 30px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:.35s;
+
+}
+
+.primary{
+
+    background:var(--accent);
+
+    color:#000;
+
+    box-shadow:
+    0 0 30px
+    rgba(0,234,255,.25);
+}
+
+.primary:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:
+    0 0 50px
+    rgba(0,234,255,.55);
+}
+
+.secondary{
+
+    color:white;
+
+    border:1px solid var(--line);
+
+    background:rgba(255,255,255,.03);
+}
+
+.secondary:hover{
+
+    color:var(--accent);
+
+    border-color:var(--accent);
+
+    transform:translateY(-6px);
+}
+
+/* =========================
+   COMMON SECTION
+========================= */
+
+section{
+
+    padding:110px 8%;
+
+    position:relative;
+}
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:60px;
+}
+
+.section-title small{
+
+    color:var(--accent);
+
+    letter-spacing:4px;
+
+    font-size:11px;
+}
+
+.section-title h2{
+
+    font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+    font-size:48px;
+
+    margin-top:12px;
+}
+
+.section-title p{
+
+    color:#666;
+
+    margin-top:10px;
+}
+
+/* =========================
+   GLASS CARD
+========================= */
+
+.glass{
+
+    background:var(--card);
+
+    border:1px solid var(--line);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:24px;
+
+    transition:.4s;
+}
+
+.glass:hover{
+
+    border-color:
+    rgba(0,234,255,.45);
+
+    transform:translateY(-7px);
+
+    box-shadow:
+    0 20px 50px
+    rgba(0,234,255,.06);
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+
+    max-width:1000px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:1fr 1.5fr;
+
+    gap:25px;
+}
+
+.profile-card{
+
+    min-height:360px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:30px;
+}
+
+.profile-circle{
+
+    width:180px;
+    height:180px;
+
+    border-radius:50%;
+
+    border:2px solid var(--accent);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin:auto;
+
+    font-family:Georgia,serif;
+
+    font-size:50px;
+
+    box-shadow:
+    0 0 50px
+    rgba(0,234,255,.18);
+}
+
+.profile-card h3{
+
+    margin-top:20px;
+
+    font-size:23px;
+}
+
+.profile-card p{
+
+    color:#666;
+
+    margin-top:8px;
+}
+
+.about-text{
+
+    padding:42px;
+}
+
+.about-text h3{
+
+    color:var(--accent);
+
+    font-size:28px;
+
+    margin-bottom:20px;
+}
+
+.about-text p{
 
     color:#999;
 
-    line-height:1.8
+    line-height:1.9;
+
+    margin-bottom:15px;
+}
+
+/* =========================
+   CREATIVE WORLD
+========================= */
+
+.creative-grid{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:18px;
+}
+
+.creative-card{
+
+    padding:32px 20px;
+
+    text-align:center;
+}
+
+.creative-card .icon{
+
+    font-size:42px;
+
+    margin-bottom:18px;
+}
+
+.creative-card h3{
+
+    color:var(--accent);
+
+    margin-bottom:10px;
+}
+
+.creative-card p{
+
+    color:#888;
+
+    font-size:14px;
+
+    line-height:1.7;
+}
+
+/* =========================
+   PROJECTS
+========================= */
+
+.projects{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:20px;
+}
+
+.project{
+
+    padding:35px;
+
+    min-height:250px;
+}
+
+.project-number{
+
+    color:var(--accent);
+
+    font-size:11px;
+
+    letter-spacing:3px;
+}
+
+.project h3{
+
+    font-family:Georgia,serif;
+
+    font-size:28px;
+
+    margin:25px 0 15px;
+}
+
+.project p{
+
+    color:#888;
+
+    line-height:1.8;
+}
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills{
+
+    max-width:850px;
+
+    margin:auto;
+}
+
+.skill{
+
+    margin-bottom:26px;
+}
+
+.skill-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-bottom:9px;
+}
+
+.skill-top span:last-child{
+
+    color:var(--accent);
+}
+
+.bar{
+
+    height:8px;
+
+    background:#191919;
+
+    border-radius:20px;
+
+    overflow:hidden;
+}
+
+.progress{
+
+    height:100%;
+
+    background:
+    linear-gradient(
+        90deg,
+        #00eaff,
+        #fff
+    );
+
+    border-radius:20px;
+}
+
+/* =========================
+   AIM
+========================= */
+
+.aim{
+
+    max-width:900px;
+
+    margin:auto;
+
+    text-align:center;
+
+    padding:70px 30px;
+}
+
+.aim small{
+
+    color:#777;
+
+    letter-spacing:5px;
+}
+
+.aim h2{
+
+    font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+    font-style:italic;
+
+    color:var(--accent);
+
+    font-size:
+    clamp(50px,8vw,85px);
+
+    margin:22px 0;
+}
+
+.aim p{
+
+    max-width:650px;
+
+    margin:auto;
+
+    color:#999;
+
+    line-height:1.9;
+}
+
+.motto{
+
+    margin-top:28px;
+
+    color:white !important;
+
+    font-weight:bold;
+
+    letter-spacing:2px;
+}
+
+/* =========================
+   ACHIEVEMENTS
+========================= */
+
+.achievements{
+
+    max-width:900px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:20px;
+}
+
+.achievement{
+
+    padding:35px;
+
+    text-align:center;
+}
+
+.achievement h3{
+
+    font-family:Georgia,serif;
+
+    font-size:45px;
+
+    color:var(--accent);
+}
+
+.achievement p{
+
+    color:#777;
+
+    margin-top:10px;
+}
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:15px;
+}
+
+.gallery-box{
+
+    height:240px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:20px;
+
+    border:1px solid var(--line);
+
+    background:
+    linear-gradient(
+        135deg,
+        #0b0b0b,
+        #1a1a1a
+    );
+
+    color:#555;
+
+    font-family:Georgia,serif;
+
+    letter-spacing:3px;
+
+    transition:.4s;
+}
+
+.gallery-box:hover{
+
+    transform:scale(1.03);
+
+    border-color:var(--accent);
+
+    color:var(--accent);
+}
+
+/* =========================
+   SOCIAL
+========================= */
+
+.social{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+}
+
+.social a{
+
+    padding:15px 25px;
+
+    border:1px solid var(--line);
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    color:white;
+
+    transition:.3s;
+}
+
+.social a:hover{
+
+    color:var(--accent);
+
+    border-color:var(--accent);
+
+    transform:translateY(-5px);
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+
+    max-width:650px;
+
+    margin:auto;
+
+    text-align:center;
+}
+
+.contact-intro{
+
+    color:#888;
+
+    line-height:1.8;
+}
+
+.contact-box{
+
+    margin-top:30px;
+
+    padding:35px;
+}
+
+.contact-box h3{
+
+    color:var(--accent);
+
+    margin-bottom:8px;
+}
+
+.contact-box p{
+
+    color:#888;
+
+    margin-bottom:22px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    padding:30px;
+
+    text-align:center;
+
+    border-top:1px solid #151515;
+
+    color:#555;
+}
+
+footer span{
+
+    color:var(--accent);
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(30px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:850px){
+
+    nav{
+
+        flex-direction:column;
+
+        gap:13px;
+
+        padding:15px;
+    }
+
+    nav ul{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+        gap:13px;
+    }
+
+    .about{
+
+        grid-template-columns:1fr;
+    }
+
+    .creative-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    .projects{
+
+        grid-template-columns:1fr;
+    }
+
+    .achievements{
+
+        grid-template-columns:1fr;
+    }
+
+    .gallery{
+
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:500px){
+
+    section{
+
+        padding:80px 5%;
+    }
+
+    .hero{
+
+        padding-top:140px;
+    }
+
+    .hero h1{
+
+        font-size:65px;
+
+        letter-spacing:-3px;
+    }
+
+    .hero-tag{
+
+        letter-spacing:2px;
+    }
+
+    .future-plan{
+
+        font-size:34px;
+    }
+
+    .future-plan span{
+
+        letter-spacing:4px;
+    }
+
+    .creative-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .gallery{
+
+        grid-template-columns:1fr;
+    }
+
+    .section-title h2{
+
+        font-size:38px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- LOADER -->
+
+<div class="loader">
+
+    <div class="loader-text">
+
+        <h2>MICHAEL</h2>
+
+        <p>CREATE • CODE • DREAM • SERVE</p>
+
+    </div>
+
+</div>
+
+<!-- NAVIGATION -->
+
+<nav>
+
+<div class="logo">
+MICHAEL.
+</div>
+
+<ul>
+
+<li>
+<a href="#home">Home</a>
+</li>
+
+<li>
+<a href="#about">About</a>
+</li>
+
+<li>
+<a href="#creative">Creative</a>
+</li>
+
+<li>
+<a href="#projects">Projects</a>
+</li>
+
+<li>
+<a href="#skills">Skills</a>
+</li>
+
+<li>
+<a href="#aim">Aim</a>
+</li>
+
+<li>
+<a href="#contact">Contact</a>
+</li>
+
+</ul>
+
+</nav>
+
+<!-- HERO -->
+
+<section id="home">
+
+<div class="hero">
+
+<div class="hero-tag">
+KORESH MICHAEL • PERSONAL BRAND
+</div>
+
+<h1>
+
+KORESH
+
+<span>MICHAEL</span>
+
+</h1>
+
+<div class="future-plan">
+
+<span>MY FUTURE PLAN IS</span>
+
+BIG.
+
+</div>
+
+<p class="hero-description">
+
+Create. Code. Dream. Serve.
+
+<br>
+
+Building my future through
+creativity, technology and purpose.
+
+</p>
+
+<div class="buttons">
+
+<a
+href="#projects"
+class="btn primary">
+
+Explore My Work →
+
+</a>
+
+<a
+href="#contact"
+class="btn secondary">
+
+Let's Connect
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="section-title">
+
+<small>WHO AM I?</small>
+
+<h2>About Me</h2>
+
+<p>
+A little about my journey.
+</p>
+
+</div>
+
+<div class="about">
+
+<div class="profile-card glass">
+
+<div>
+
+<div class="profile-circle">
+KM
+</div>
+
+<h3>
+Koresh Michael
+</h3>
+
+<p>
+CSE Student • Creator
+</p>
+
+</div>
+
+</div>
+
+<div class="about-text glass">
+
+<h3>
+My Story
+</h3>
+
+<p>
+
+Hello! I'm
+<b>Koresh Michael</b>,
+a Computer Science Engineering student
+interested in technology, creativity,
+editing and web development.
+
+</p>
+
+<p>
+
+I enjoy learning new technologies,
+creating digital designs and developing
+projects that turn ideas into reality.
+
+</p>
+
+<p>
+
+My journey is about learning,
+improving and working towards
+a bigger purpose.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CREATIVE -->
+
+<section id="creative">
+
+<div class="section-title">
+
+<small>
+MY CREATIVE WORLD
+</small>
+
+<h2>
+What I Do
+</h2>
+
+<p>
+Technology meets creativity.
+</p>
+
+</div>
+
+<div class="creative-grid">
+
+<div class="creative-card glass">
+
+<div class="icon">
+🎬
+</div>
+
+<h3>
+Video Editing
+</h3>
+
+<p>
+Cinematic edits, transitions
+and visual storytelling.
+</p>
+
+</div>
+
+<div class="creative-card glass">
+
+<div class="icon">
+🖼️
+</div>
+
+<h3>
+Photo Editing
+</h3>
+
+<p>
+Creative photo editing,
+retouching and aesthetics.
+</p>
+
+</div>
+
+<div class="creative-card glass">
+
+<div class="icon">
+🎨
+</div>
+
+<h3>
+Graphic Design
+</h3>
+
+<p>
+Posters, logos and
+social media designs.
+</p>
+
+</div>
+
+<div class="creative-card glass">
+
+<div class="icon">
+💻
+</div>
+
+<h3>
+Web Development
+</h3>
+
+<p>
+Modern responsive websites
+and digital experiences.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<div class="section-title">
+
+<small>
+SELECTED WORK
+</small>
+
+<h2>
+Projects
+</h2>
+
+<p>
+Ideas that I'm building.
+</p>
+
+</div>
+
+<div class="projects">
+
+<div class="project glass">
+
+<div class="project-number">
+01 / PROJECT
+</div>
+
+<h3>
+Campus Connect
+</h3>
+
+<p>
+
+A student platform concept
+for notes, timetable,
+announcements and resources.
+
+</p>
+
+</div>
+
+<div class="project glass">
+
+<div class="project-number">
+02 / PROJECT
+</div>
+
+<h3>
+ChatVerse
+</h3>
+
+<p>
+
+A social communication
+application concept focused
+on simple digital interaction.
+
+</p>
+
+</div>
+
+<div class="project glass">
+
+<div class="project-number">
+03 / PROJECT
+</div>
+
+<h3>
+Personal Website
+</h3>
+
+<p>
+
+My personal digital space
+to showcase my journey,
+skills and dreams.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+<div class="section-title">
+
+<small>
+MY TOOLKIT
+</small>
+
+<h2>
+Skills
+</h2>
+
+</div>
+
+<div class="skills">
+
+<div class="skill">
+
+<div class="skill-top">
+
+<span>
+HTML
+</span>
+
+<span>
+90%
+</span>
+
+</div>
+
+<div class="bar">
+
+<div
+class="progress"
+style="width:90%;">
+</div>
+
+</div>
+
+</div>
+
+<div class="skill">
+
+<div class="skill-top">
+
+<span>
+CSS
+</span>
+
+<span>
+85%
+</span>
+
+</div>
+
+<div class="bar">
+
+<div
+class="progress"
+style="width:85%;">
+</div>
+
+</div>
+
+</div>
+
+<div class="skill">
+
+<div class="skill-top">
+
+<span>
+Java
+</span>
+
+<span>
+75%
+</span>
+
+</div>
+
+<div class="bar">
+
+<div
+class="progress"
+style="width:75%;">
+</div>
+
+</div>
+
+</div>
+
+<div class="skill">
+
+<div class="skill-top">
+
+<span>
+C / C++
+</span>
+
+<span>
+75%
+</span>
+
+</div>
+
+<div class="bar">
+
+<div
+class="progress"
+style="width:75%;">
+</div>
+
+</div>
+
+</div>
+
+<div class="skill">
+
+<div class="skill-top">
+
+<span>
+Python
+</span>
+
+<span>
+65%
+</span>
+
+</div>
+
+<div class="bar">
+
+<div
+class="progress"
+style="width:65%;">
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- AIM -->
+
+<section id="aim">
+
+<div class="section-title">
+
+<small>
+MY DREAM • MY DESTINATION
+</small>
+
+<h2>
+My Mission
+</h2>
+
+</div>
+
+<div class="aim glass">
+
+<small>
+ONE DREAM
+</small>
+
+<h2>
+IAS OFFICER
+</h2>
+
+<p>
+
+My dream is to become an IAS Officer
+and serve people with honesty,
+dedication and responsibility.
+
+</p>
+
+<p class="motto">
+
+DREAM BIG • WORK HARD • NEVER GIVE UP
+
+</p>
+
+</div>
+
+</section>
+
+<!-- HIGHLIGHTS -->
+
+<section>
+
+<div class="section-title">
+
+<small>
+MY JOURNEY
+</small>
+
+<h2>
+Highlights
+</h2>
+
+</div>
+
+<div class="achievements">
+
+<div class="achievement glass">
+
+<h3>
+01
+</h3>
+
+<p>
+Creative Journey
+</p>
+
+</div>
+
+<div class="achievement glass">
+
+<h3>
+02
+</h3>
+
+<p>
+Technology Projects
+</p>
+
+</div>
+
+<div class="achievement glass">
+
+<h3>
+03
+</h3>
+
+<p>
+Big Future Dream
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section>
+
+<div class="section-title">
+
+<small>
+VISUAL WORLD
+</small>
+
+<h2>
+Gallery
+</h2>
+
+<p>
+Your best photos can be added here.
+</p>
+
+</div>
+
+<div class="gallery">
+
+<div class="gallery-box">
+PHOTO 01
+</div>
+
+<div class="gallery-box">
+PHOTO 02
+</div>
+
+<div class="gallery-box">
+PHOTO 03
+</div>
+
+<div class="gallery-box">
+PHOTO 04
+</div>
+
+<div class="gallery-box">
+PHOTO 05
+</div>
+
+<div class="gallery-box">
+PHOTO 06
+</div>
+
+</div>
+
+</section>
+
+<!-- SOCIAL -->
+
+<section>
+
+<div class="section-title">
+
+<small>
+LET'S CONNECT
+</small>
+
+<h2>
+Social Media
+</h2>
+
+</div>
+
+<div class="social">
+
+<a
+href="https://www.instagram.com/nellai.__.michael"
+target="_blank">
+
+📸 Instagram
+
+</a>
+
+<a
+href="https://youtube.com/@nellai._.michael"
+target="_blank">
+
+▶️ YouTube
+
+</a>
+
+<a
+href="https://github.com/koreshmichael/Koresh-Michael-website"
+target="_blank">
+
+🐙 GitHub
+
+</a>
+
+<a
+href="https://www.linkedin.com/in/koresh-michael-4b0516415"
+target="_blank">
+
+💼 LinkedIn
+
+</a>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="section-title">
+
+<small>
+GET IN TOUCH
+</small>
+
+<h2>
+Contact Me
+</h2>
+
+</div>
+
+<div class="contact">
+
+<p class="contact-intro">
+
+Have an idea, project or simply
+want to connect?
+
+<br>
+
+Let's create something meaningful.
+
+</p>
+
+<div class="contact-box glass">
+
+<h
