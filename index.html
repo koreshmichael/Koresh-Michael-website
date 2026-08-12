@@ -5,12 +5,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Koresh Michael | My Future Plan Is Big</title>
-
-<meta name="description"
-content="Koresh Michael — CSE Student, Creative Editor, Developer and Future IAS Officer.">
+<title>KORESH MICHAEL</title>
 
 <style>
+
+/* =========================
+   BASIC
+========================= */
 
 *{
     margin:0;
@@ -19,63 +20,174 @@ content="Koresh Michael — CSE Student, Creative Editor, Developer and Future I
     scroll-behavior:smooth;
 }
 
-:root{
-    --bg:#040404;
-    --card:rgba(255,255,255,0.05);
-    --line:rgba(255,255,255,0.12);
-    --white:#ffffff;
-    --muted:#8d8d8d;
-    --accent:#00eaff;
-}
-
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:var(--bg);
-    color:white;
-    overflow-x:hidden;
+    background:#050505;
+    color:#ffffff;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 /* =========================
-   LOADER
+   NAVBAR
 ========================= */
 
-.loader{
-    position:fixed;
-    inset:0;
-    background:#030303;
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    background:#090909;
+
+    padding:18px 7%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    border-bottom:1px solid #222;
+}
+
+.logo{
+    font-family:Georgia, serif;
+    font-size:22px;
+    font-weight:bold;
+    letter-spacing:3px;
+    color:#00eaff;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:22px;
+}
+
+nav a{
+    color:#aaa;
+    text-decoration:none;
+    font-size:14px;
+}
+
+nav a:hover{
+    color:#00eaff;
+}
+
+/* =========================
+   HERO
+========================= */
+
+#home{
+    min-height:92vh;
+
     display:flex;
     justify-content:center;
     align-items:center;
-    z-index:9999;
-    animation:loaderHide 1s ease 2s forwards;
-}
 
-.loader-text{
     text-align:center;
+
+    padding:40px 20px;
+
+    background:
+    radial-gradient(
+        circle at center,
+        #07353d 0%,
+        #050505 45%,
+        #050505 100%
+    );
 }
 
-.loader-text h2{
-    font-size:42px;
+.hero{
+    max-width:1000px;
+}
+
+/* SMALL TITLE */
+
+.small-title{
+    font-size:12px;
+    letter-spacing:6px;
+    color:#00eaff;
+    margin-bottom:25px;
+}
+
+/* MAIN NAME */
+
+.hero h1{
+
+    font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+    font-size:clamp(65px,13vw,150px);
+
+    line-height:.85;
+
+    letter-spacing:-6px;
+
+    font-weight:900;
+}
+
+.hero h1 span{
+
+    display:block;
+
+    color:transparent;
+
+    -webkit-text-stroke:1px #ffffff;
+}
+
+/* FUTURE PLAN */
+
+.future{
+
+    margin-top:45px;
+}
+
+/* SMALL FONT */
+
+.future .small{
+
+    display:block;
+
+    font-family:Arial,sans-serif;
+
+    font-size:13px;
+
     letter-spacing:8px;
-    color:var(--accent);
-    animation:loaderPulse 1s infinite alternate;
+
+    color:#777;
+
+    margin-bottom:12px;
 }
 
-.loader-text p{
-    margin-top:12px;
-    color:#666;
-    letter-spacing:5px;
-    font-size:10px;
+/* BIG FONT */
+
+.future h2{
+
+    font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+    font-size:clamp(45px,8vw,85px);
+
+    font-style:italic;
+
+    font-weight:bold;
+
+    letter-spacing:3px;
+
+    color:#00eaff;
+
+    text-shadow:
+    0 0 15px rgba(0,234,255,.5),
+    0 0 35px rgba(0,234,255,.2);
 }
 
-@keyframes loaderHide{
-    to{
-        opacity:0;
-        visibility:hidden;
-    }
-}
+.hero-text{
 
-@keyframes loaderPulse{
-    from{
-        opacity:.3;
-        transform:scale
+    max-width:650px;
+
+    margin:25px auto 0;
+
+    color:#999;
+
+    line-height:1.8
