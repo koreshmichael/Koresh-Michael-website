@@ -192,4 +192,1619 @@ nav ul li a:hover{
     position:absolute;
 
     width:900px;
-    height:900px
+    height:900px;
+
+    border:1px solid rgba(255,255,255,.04);
+
+    border-radius:50%;
+}
+
+@keyframes rotate{
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+.hero{
+    position:relative;
+    z-index:5;
+
+    max-width:1100px;
+
+    padding:120px 20px 60px;
+}
+
+.hero-tag{
+    color:var(--cyan);
+    font-size:11px;
+    letter-spacing:6px;
+    margin-bottom:30px;
+}
+
+.hero h1{
+    font-family:Georgia,"Times New Roman",serif;
+
+    font-size:clamp(65px,14vw,165px);
+
+    line-height:.8;
+
+    letter-spacing:-8px;
+
+    font-weight:900;
+}
+
+.hero h1 span{
+    display:block;
+
+    color:transparent;
+
+    -webkit-text-stroke:1.3px white;
+
+    text-shadow:
+    0 0 30px rgba(0,234,255,.15);
+}
+
+
+/* =========================
+   FUTURE PLAN
+========================= */
+
+.future-plan{
+    margin-top:50px;
+
+    font-family:Georgia,"Times New Roman",serif;
+
+    font-size:clamp(35px,6vw,75px);
+
+    font-weight:bold;
+
+    font-style:italic;
+
+    color:var(--cyan);
+
+    text-shadow:
+    0 0 20px rgba(0,234,255,.7),
+    0 0 50px rgba(0,234,255,.25);
+
+    animation:futureGlow 2s infinite alternate;
+}
+
+.future-plan small{
+    display:block;
+
+    font-family:Arial,sans-serif;
+
+    color:#777;
+
+    font-size:11px;
+
+    letter-spacing:7px;
+
+    margin-bottom:12px;
+}
+
+@keyframes futureGlow{
+
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform:scale(1.04);
+    }
+}
+
+.hero-description{
+    max-width:650px;
+
+    margin:25px auto;
+
+    color:#999;
+
+    line-height:1.8;
+
+    font-size:16px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.buttons{
+    margin-top:35px;
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+}
+
+.btn{
+    display:inline-block;
+
+    padding:15px 28px;
+
+    border-radius:50px;
+
+    transition:.35s;
+
+    font-weight:bold;
+}
+
+.primary{
+    background:var(--cyan);
+    color:#000;
+
+    box-shadow:
+    0 0 30px rgba(0,234,255,.25);
+}
+
+.primary:hover{
+    transform:translateY(-6px);
+
+    box-shadow:
+    0 0 55px rgba(0,234,255,.6);
+}
+
+.secondary{
+    color:white;
+
+    border:1px solid var(--border);
+
+    background:#090909;
+}
+
+.secondary:hover{
+    color:var(--cyan);
+    border-color:var(--cyan);
+    transform:translateY(-6px);
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+section{
+    padding:110px 7%;
+
+    position:relative;
+}
+
+.section-title{
+    text-align:center;
+
+    margin-bottom:55px;
+}
+
+.section-title small{
+    color:var(--cyan);
+
+    letter-spacing:5px;
+
+    font-size:11px;
+}
+
+.section-title h2{
+    margin-top:12px;
+
+    font-family:Georgia,serif;
+
+    font-size:48px;
+}
+
+.section-title p{
+    color:#666;
+
+    margin-top:10px;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+    max-width:1050px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:1fr 1.5fr;
+
+    gap:25px;
+}
+
+.card{
+    background:
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.06),
+        rgba(255,255,255,.015)
+    );
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    padding:35px;
+
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-7px);
+
+    border-color:rgba(0,234,255,.5);
+
+    box-shadow:
+    0 20px 50px rgba(0,234,255,.07);
+}
+
+.profile{
+    text-align:center;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+}
+
+.profile-circle{
+    width:180px;
+    height:180px;
+
+    border-radius:50%;
+
+    border:2px solid var(--cyan);
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    margin:auto;
+
+    font-family:Georgia,serif;
+
+    font-size:55px;
+
+    color:var(--cyan);
+
+    box-shadow:
+    0 0 45px rgba(0,234,255,.2);
+}
+
+.profile h3{
+    margin-top:22px;
+
+    font-size:25px;
+}
+
+.profile p{
+    color:#777;
+
+    margin-top:8px;
+}
+
+.story h3{
+    color:var(--cyan);
+
+    font-family:Georgia,serif;
+
+    font-size:32px;
+
+    margin-bottom:20px;
+}
+
+.story p{
+    color:#999;
+
+    line-height:1.9;
+
+    margin-bottom:16px;
+}
+
+
+/* =========================
+   CREATIVE
+========================= */
+
+.creative-grid{
+    max-width:1100px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:18px;
+}
+
+.creative-card{
+    text-align:center;
+
+    padding:35px 20px;
+}
+
+.icon{
+    font-size:42px;
+
+    margin-bottom:18px;
+}
+
+.creative-card h3{
+    color:var(--cyan);
+
+    margin-bottom:12px;
+}
+
+.creative-card p{
+    color:#888;
+
+    font-size:14px;
+
+    line-height:1.7;
+}
+
+
+/* =========================
+   PROJECTS
+========================= */
+
+.projects{
+    max-width:1100px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:20px;
+}
+
+.project{
+    padding:35px;
+
+    min-height:250px;
+}
+
+.project-number{
+    color:var(--cyan);
+
+    font-size:11px;
+
+    letter-spacing:4px;
+}
+
+.project h3{
+    font-family:Georgia,serif;
+
+    font-size:28px;
+
+    margin:25px 0 15px;
+}
+
+.project p{
+    color:#888;
+
+    line-height:1.8;
+}
+
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills{
+    max-width:850px;
+
+    margin:auto;
+}
+
+.skill{
+    margin-bottom:28px;
+}
+
+.skill-top{
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-bottom:9px;
+}
+
+.skill-top span:last-child{
+    color:var(--cyan);
+}
+
+.bar{
+    height:9px;
+
+    background:#1a1a1a;
+
+    border-radius:20px;
+
+    overflow:hidden;
+}
+
+.progress{
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        var(--cyan),
+        white
+    );
+
+    border-radius:20px;
+}
+
+
+/* =========================
+   AIM
+========================= */
+
+.aim{
+    max-width:900px;
+
+    margin:auto;
+
+    text-align:center;
+
+    padding:70px 30px;
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(0,234,255,.08),
+        rgba(255,255,255,.02)
+    );
+
+    border:1px solid var(--cyan);
+
+    border-radius:28px;
+
+    box-shadow:
+    0 0 45px rgba(0,234,255,.1);
+}
+
+.aim small{
+    color:#777;
+
+    letter-spacing:5px;
+}
+
+.aim h2{
+    font-family:Georgia,serif;
+
+    font-size:clamp(50px,8vw,90px);
+
+    font-style:italic;
+
+    color:var(--cyan);
+
+    margin:25px 0;
+
+    text-shadow:
+    0 0 25px rgba(0,234,255,.4);
+}
+
+.aim p{
+    max-width:650px;
+
+    margin:auto;
+
+    color:#999;
+
+    line-height:1.9;
+}
+
+.motto{
+    margin-top:28px;
+
+    color:white !important;
+
+    font-weight:bold;
+
+    letter-spacing:3px;
+}
+
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery{
+    max-width:1100px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:20px;
+}
+
+.photo{
+    height:450px;
+
+    overflow:hidden;
+
+    border-radius:22px;
+
+    border:1px solid var(--border);
+
+    background:#111;
+
+    transition:.4s;
+}
+
+.photo:hover{
+    transform:translateY(-8px);
+
+    border-color:var(--cyan);
+
+    box-shadow:
+    0 20px 40px rgba(0,234,255,.1);
+}
+
+.photo img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:.5s;
+}
+
+.photo:hover img{
+    transform:scale(1.06);
+}
+
+
+/* =========================
+   SOCIAL
+========================= */
+
+.social{
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+}
+
+.social a{
+    color:white;
+
+    border:1px solid var(--border);
+
+    padding:15px 25px;
+
+    border-radius:50px;
+
+    transition:.3s;
+}
+
+.social a:hover{
+    color:var(--cyan);
+
+    border-color:var(--cyan);
+
+    transform:translateY(-5px);
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+    max-width:650px;
+
+    margin:auto;
+
+    text-align:center;
+}
+
+.contact-intro{
+    color:#888;
+
+    line-height:1.8;
+}
+
+.contact-box{
+    margin-top:30px;
+
+    padding:35px;
+
+    background:#101010;
+
+    border:1px solid var(--border);
+
+    border-radius:22px;
+}
+
+.contact-box h3{
+    color:var(--cyan);
+
+    margin-bottom:8px;
+}
+
+.contact-box p{
+    color:#888;
+
+    margin-bottom:22px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    padding:35px;
+
+    text-align:center;
+
+    border-top:1px solid #181818;
+
+    color:#555;
+
+    line-height:1.8;
+}
+
+footer span{
+    color:var(--cyan);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:850px){
+
+    nav{
+        flex-direction:column;
+
+        gap:14px;
+
+        padding:15px;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+        gap:13px;
+    }
+
+    .about{
+        grid-template-columns:1fr;
+    }
+
+    .creative-grid{
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    .projects{
+        grid-template-columns:1fr;
+    }
+
+    .gallery{
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+}
+
+
+@media(max-width:550px){
+
+    section{
+        padding:80px 5%;
+    }
+
+    .hero{
+        padding-top:150px;
+    }
+
+    .hero h1{
+        font-size:65px;
+
+        letter-spacing:-4px;
+    }
+
+    .hero-tag{
+        letter-spacing:3px;
+    }
+
+    .future-plan{
+        font-size:38px;
+    }
+
+    .future-plan small{
+        letter-spacing:4px;
+    }
+
+    .creative-grid{
+        grid-template-columns:1fr;
+    }
+
+    .gallery{
+        grid-template-columns:1fr;
+    }
+
+    .photo{
+        height:500px;
+    }
+
+    .section-title h2{
+        font-size:38px;
+    }
+
+    .profile-circle{
+        width:150px;
+        height:150px;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     LOADER
+========================= -->
+
+<div class="loader">
+
+<div class="loader-content">
+
+<h1>MICHAEL</h1>
+
+<p>
+CREATE • CODE • DREAM • SERVE
+</p>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+<div class="logo">
+MICHAEL.
+</div>
+
+<ul>
+
+<li>
+<a href="#home">Home</a>
+</li>
+
+<li>
+<a href="#about">About</a>
+</li>
+
+<li>
+<a href="#creative">Creative</a>
+</li>
+
+<li>
+<a href="#projects">Projects</a>
+</li>
+
+<li>
+<a href="#skills">Skills</a>
+</li>
+
+<li>
+<a href="#aim">Aim</a>
+</li>
+
+<li>
+<a href="#gallery">Gallery</a>
+</li>
+
+<li>
+<a href="#contact">Contact</a>
+</li>
+
+</ul>
+
+</nav>
+
+
+<!-- =========================
+     HOME
+========================= -->
+
+<section id="home">
+
+<div class="hero">
+
+<div class="hero-tag">
+KORESH MICHAEL • PERSONAL BRAND
+</div>
+
+<h1>
+
+KORESH
+
+<span>MICHAEL</span>
+
+</h1>
+
+
+<div class="future-plan">
+
+<small>
+MY FUTURE PLAN IS
+</small>
+
+BIG.
+
+</div>
+
+
+<p class="hero-description">
+
+Create. Code. Dream. Serve.
+
+<br>
+
+Building my future through
+creativity, technology and purpose.
+
+</p>
+
+
+<div class="buttons">
+
+<a
+href="#projects"
+class="btn primary">
+
+EXPLORE MY WORK →
+
+</a>
+
+<a
+href="#contact"
+class="btn secondary">
+
+LET'S CONNECT
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+
+<div class="section-title">
+
+<small>
+WHO AM I?
+</small>
+
+<h2>
+About Me
+</h2>
+
+<p>
+A little about my journey.
+</p>
+
+</div>
+
+
+<div class="about">
+
+
+<div class="card profile">
+
+<div>
+
+<div class="profile-circle">
+KM
+</div>
+
+<h3>
+Koresh Michael
+</h3>
+
+<p>
+CSE Student • Creator • Developer
+</p>
+
+</div>
+
+</div>
+
+
+<div class="card story">
+
+<h3>
+My Story
+</h3>
+
+<p>
+
+Hello! I'm
+<b>Koresh Michael</b>,
+a Computer Science Engineering student
+interested in technology, creativity,
+editing and web development.
+
+</p>
+
+<p>
+
+I enjoy learning new technologies,
+creating digital designs and developing
+projects that turn ideas into reality.
+
+</p>
+
+<p>
+
+My journey is about learning,
+improving and working towards
+a bigger purpose.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CREATIVE
+========================= -->
+
+<section id="creative">
+
+<div class="section-title">
+
+<small>
+MY CREATIVE WORLD
+</small>
+
+<h2>
+What I Do
+</h2>
+
+<p>
+Technology meets creativity.
+</p>
+
+</div>
+
+
+<div class="creative-grid">
+
+
+<div class="card creative-card">
+
+<div class="icon">
+🎬
+</div>
+
+<h3>
+Video Editing
+</h3>
+
+<p>
+Cinematic edits, transitions
+and visual storytelling.
+</p>
+
+</div>
+
+
+<div class="card creative-card">
+
+<div class="icon">
+🖼️
+</div>
+
+<h3>
+Photo Editing
+</h3>
+
+<p>
+Creative photo editing,
+retouching and aesthetics.
+</p>
+
+</div>
+
+
+<div class="card creative-card">
+
+<div class="icon">
+🎨
+</div>
+
+<h3>
+Graphic Design
+</h3>
+
+<p>
+Posters, logos and
+social media designs.
+</p>
+
+</div>
+
+
+<div class="card creative-card">
+
+<div class="icon">
+💻
+</div>
+
+<h3>
+Web Development
+</h3>
+
+<p>
+Modern responsive websites
+and digital experiences.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
+
+<section id="projects">
+
+<div class="section-title">
+
+<small>
+SELECTED WORK
+</small>
+
+<h2>
+Projects
+</h2>
+
+<p>
+Ideas that I'm building.
+</p>
+
+</div>
+
+
+<div class="projects">
+
+
+<div class="card project">
+
+<div class="project-number">
+01 / PROJECT
+</div>
+
+<h3>
+Campus Connect
+</h3>
+
+<p>
+
+A student platform concept
+for notes, timetable,
+announcements and resources.
+
+</p>
+
+</div>
+
+
+<div class="card project">
+
+<div class="project-number">
+02 / PROJECT
+</div>
+
+<h3>
+ChatVerse
+</h3>
+
+<p>
+
+A social communication
+application concept focused
+on simple digital interaction.
+
+</p>
+
+</div>
+
+
+<div class="card project">
+
+<div class="project-number">
+03 / PROJECT
+</div>
+
+<h3>
+Personal Website
+</h3>
+
+<p>
+
+My personal digital space
+to showcase my journey,
+skills and dreams.
+
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     SKILLS
+========================= -->
+
+<section id="skills">
+
+<div class="section-title">
+
+<small>
+MY TOOLKIT
+</small>
+
+<h2>
+Skills
+</h2>
+
+</div>
+
+
+<div class="skills">
+
+
+<div class="skill">
+
+<div class="skill-top">
+
+<span>
+HTML
+</span>
+
+<span>
+90%
+</span>
+
+</div>
+
+<div class="bar">
+
+<div
+class="progress"
+style="width:90%">
+</div>
+
+</div>
+
+</div>
+
+
+<div class="skill">
+
+<div class="skill-top">
+
+<span>
+CSS
+</span>
+
+<span>
+85%
+</span>
+
+</div>
+
+<div class="bar">
+
+<div
+class="progress"
+style="width:85%">
+</div>
+
+</div>
+
+</div>
+
+
+<div class="skill">
+
+<div class="skill-top">
+
+<span>
+Java
+</span>
+
+<span>
+75%
+</span>
+
+</div>
+
+<div class="bar">
+
+<div
+class="progress"
+style="width:75%">
+</div>
+
+</div>
+
+</div>
+
+
+<div class="skill">
+
+<div class="skill-top">
+
+<span>
+C / C++
+</span>
+
+<span>
+75%
+</span>
+
+</div>
+
+<div class="bar">
+
+<div
+class="progress"
+style="width:75%">
+</div>
+
+</div>
+
+</div>
+
+
+<div class="skill">
+
+<div class="skill-top">
+
+<span>
+Python
+</span>
+
+<span>
+65%
+</span>
+
+</div>
+
+<div class="bar">
+
+<div
+class="progress"
+style="width:65%">
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     AIM
+========================= -->
+
+<section id="aim">
+
+<div class="section-title">
+
+<small>
+MY DREAM • MY DESTINATION
+</small>
+
+<h2>
+My Mission
+</h2>
+
+</div>
+
+
+<div class="aim">
+
+<small>
+ONE DREAM
+</small>
+
+<h2>
+IAS OFFICER
+</h2>
+
+<p>
+
+My dream is to become an IAS Officer
+and serve people with honesty,
+dedication and responsibility.
+
+</p>
+
+<p class="motto">
+
+DREAM BIG • WORK HARD • NEVER GIVE UP 🔥
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     GALLERY
+========================= -->
+
+<section id="gallery">
+
+<div class="section-title">
+
+<small>
+MY VISUAL WORLD
+</small>
+
+<h2>
+My Gallery
+</h2>
+
+<p>
+My favourite moments.
+</p>
+
+</div>
+
+
+<div class="gallery">
+
+
+<div class="photo">
+
+<img
+src="IMG_20260804.jpeg"
+alt="Koresh Michael Photo 1">
+
+</div>
+
+
+<div class="photo">
+
+<img
+src="IMG_20260805.jpeg"
+alt="Koresh Michael Photo 2">
+
+</div>
+
+
+<div class="photo">
+
+<img
+src="IMG_20260806.jpeg"
+alt="Koresh Michael Photo 3">
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     SOCIAL MEDIA
+========================= -->
+
+<section>
+
+<div class="section-title">
+
+<small>
+LET'S CONNECT
+</small>
+
+<h2>
+Social Media
+</h2>
+
+</div>
+
+
+<div class="social">
+
+
+<a
+href="https://www.instagram.com/nellai.__.michael"
+target="_blank">
+
+📸 Instagram
+
+</a>
+
+
+<a
+href="https://youtube.com/@nellai._.michael"
+target="_blank">
+
+▶️ YouTube
+
+</a>
+
+
+<a
+href="https://github.com/koreshmichael/Koresh-Michael-website"
+target="_blank">
+
+🐙 GitHub
+
+</a>
+
+
+<a
+href="https://www.linkedin.com/in/koresh-michael-4b0516415"
+target="_blank">
+
+💼 LinkedIn
+
+</a>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact">
+
+<div class="section-title">
+
+<small>
+GET IN TOUCH
+</small>
+
+<h2>
+Contact Me
+</h2>
+
+</div>
+
+
+<div class="contact">
+
+<p class="contact-intro">
+
+Have an idea, project or simply
+want to connect?
+
+<br>
+
+Let's create something meaningful.
+
+</p>
+
+
+<div class="contact-box">
+
+<h3>
+📧 EMAIL
+</h3>
+
+<p>
+koreshmichael74@gmail.com
+</p>
+
+
+<h3>
+📍 LOCATION
+</h3>
+
+<p>
+Tamil Nadu, India
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+© 2026
+
+<span>
+KORESH MICHAEL
+</span>
+
+<br>
+
+CREATE • CODE • DREAM • SERVE
+
+</footer>
+
+
+</body>
+</html>
