@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Koresh Michael | My Future Plan Is Big</title>
-
-<meta name="description"
-content="Koresh Michael — CSE Student, Creative Editor, Developer and Future IAS Officer.">
+<title>Koresh Michael</title>
 
 <style>
-
 *{
     margin:0;
     padding:0;
@@ -19,274 +14,676 @@ content="Koresh Michael — CSE Student, Creative Editor, Developer and Future I
     scroll-behavior:smooth;
 }
 
-:root{
-    --bg:#040404;
-    --card:rgba(255,255,255,0.05);
-    --line:rgba(255,255,255,0.12);
-    --white:#ffffff;
-    --muted:#8d8d8d;
-    --accent:#00eaff;
-}
-
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:var(--bg);
+    background:#050505;
     color:white;
-    overflow-x:hidden;
+    font-family:Arial,sans-serif;
 }
-
-/* =========================
-   LOADER
-========================= */
-
-.loader{
-    position:fixed;
-    inset:0;
-    background:#030303;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    z-index:9999;
-    animation:loaderHide 1s ease 2s forwards;
-}
-
-.loader-text{
-    text-align:center;
-}
-
-.loader-text h2{
-    font-family:Georgia,serif;
-    font-size:42px;
-    letter-spacing:8px;
-    color:var(--accent);
-    animation:loaderPulse 1s infinite alternate;
-}
-
-.loader-text p{
-    margin-top:12px;
-    color:#666;
-    letter-spacing:5px;
-    font-size:10px;
-}
-
-@keyframes loaderHide{
-    to{
-        opacity:0;
-        visibility:hidden;
-    }
-}
-
-@keyframes loaderPulse{
-    from{
-        opacity:.3;
-        transform:scale(.97);
-    }
-    to{
-        opacity:1;
-        transform:scale(1);
-    }
-}
-
-/* =========================
-   NAVIGATION
-========================= */
 
 nav{
     position:fixed;
     top:0;
-    left:0;
     width:100%;
-    z-index:1000;
-
     padding:18px 7%;
-
+    background:rgba(0,0,0,.85);
+    backdrop-filter:blur(15px);
     display:flex;
     justify-content:space-between;
     align-items:center;
-
-    background:rgba(4,4,4,.75);
-    backdrop-filter:blur(18px);
-
-    border-bottom:1px solid var(--line);
+    z-index:1000;
+    border-bottom:1px solid #222;
 }
 
 .logo{
-    font-family:Georgia,serif;
-    font-size:21px;
-    font-weight:900;
+    color:#00eaff;
+    font-size:22px;
+    font-weight:bold;
     letter-spacing:3px;
-    color:var(--accent);
 }
 
 nav ul{
     display:flex;
-    gap:24px;
     list-style:none;
+    gap:20px;
 }
 
 nav a{
-    color:#aaa;
+    color:white;
     text-decoration:none;
-    font-size:13px;
-    transition:.3s;
 }
 
 nav a:hover{
-    color:var(--accent);
-}
-
-/* =========================
-   HERO
-========================= */
-
-#home{
-    min-height:100vh;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    text-align:center;
-
-    position:relative;
-    overflow:hidden;
-
-    background:
-    radial-gradient(
-        circle at 50% 40%,
-        rgba(0,234,255,.16),
-        transparent 30%
-    ),
-    #040404;
-}
-
-#home::before{
-    content:"";
-
-    position:absolute;
-
-    width:620px;
-    height:620px;
-
-    border:1px solid rgba(0,234,255,.13);
-
-    border-radius:50%;
-
-    animation:rotateCircle 16s linear infinite;
-}
-
-#home::after{
-    content:"";
-
-    position:absolute;
-
-    width:900px;
-    height:900px;
-
-    border:1px solid rgba(255,255,255,.04);
-
-    border-radius:50%;
-}
-
-@keyframes rotateCircle{
-
-    from{
-        transform:rotate(0deg);
-    }
-
-    to{
-        transform:rotate(360deg);
-    }
-
+    color:#00eaff;
 }
 
 .hero{
-    position:relative;
-    z-index:5;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:100px 20px 50px;
 
-    max-width:1100px;
-
-    padding:120px 25px 60px;
+    background:
+    radial-gradient(circle,#063b44 0%,#050505 45%);
 }
 
-.hero-tag{
-    color:var(--accent);
-
-    font-size:11px;
-
+.hero small{
+    color:#00eaff;
     letter-spacing:5px;
-
-    margin-bottom:28px;
-
-    animation:fadeUp 1s ease;
 }
 
 .hero h1{
-
-    font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-    font-size:clamp(65px,14vw,170px);
-
-    line-height:.78;
-
-    font-weight:900;
-
-    letter-spacing:-8px;
-
-    animation:fadeUp 1.2s ease;
+    margin-top:25px;
+    font-family:Georgia,serif;
+    font-size:clamp(60px,12vw,150px);
+    line-height:.8;
 }
 
 .hero h1 span{
-
     display:block;
-
     color:transparent;
-
-    -webkit-text-stroke:1.2px white;
-
-    text-shadow:
-    0 0 30px rgba(0,234,255,.12);
+    -webkit-text-stroke:1px white;
 }
 
-/* =========================
-   FUTURE PLAN
-========================= */
-
-.future-plan{
-
-    margin:45px auto 18px;
-
-    font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-    font-size:clamp(30px,5vw,65px);
-
-    font-weight:900;
-
+.future{
+    margin-top:45px;
+    font-family:Georgia,serif;
+    font-size:clamp(32px,6vw,70px);
     font-style:italic;
+    font-weight:bold;
+    color:#00eaff;
+    text-shadow:0 0 30px #00eaff;
+}
 
-    letter-spacing:2px;
+.future small{
+    display:block;
+    font-family:Arial,sans-serif;
+    font-size:12px;
+    color:#777;
+    letter-spacing:5px;
+    margin-bottom:10px;
+}
 
-    line-height:1.05;
+.hero p{
+    max-width:600px;
+    margin:25px auto;
+    color:#999;
+    line-height:1.8;
+}
 
-    background:
-    linear-gradient(
-        90deg,
-        #ffffff,
-        #00eaff,
-        #ffffff
-    );
+.btn{
+    display:inline-block;
+    padding:14px 28px;
+    margin:10px;
+    border-radius:30px;
+    text-decoration:none;
+    border:1px solid #00eaff;
+    color:#00eaff;
+}
 
-    -webkit-background-clip:text;
-    background-clip:text;
+.btn:hover{
+    background:#00eaff;
+    color:#000;
+}
 
-    color:transparent;
+section{
+    padding:100px 7%;
+}
 
-    text-shadow:
-    0 0 18px rgba(0,234,255,.18),
-    0 0 40px rgba(
+.title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.title small{
+    color:#00eaff;
+    letter-spacing:4px;
+}
+
+.title h2{
+    font-family:Georgia,serif;
+    font-size:45px;
+    margin-top:10px;
+}
+
+.about{
+    max-width:950px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1.5fr;
+    gap:25px;
+}
+
+.card{
+    background:#101010;
+    border:1px solid #252525;
+    border-radius:20px;
+    padding:35px;
+    transition:.3s;
+}
+
+.card:hover{
+    border-color:#00eaff;
+    transform:translateY(-5px);
+}
+
+.profile{
+    text-align:center;
+}
+
+.circle{
+    width:170px;
+    height:170px;
+    border:2px solid #00eaff;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:auto;
+    font-family:Georgia,serif;
+    font-size:50px;
+    color:#00eaff;
+    box-shadow:0 0 40px rgba(0,234,255,.25);
+}
+
+.profile h3{
+    margin-top:20px;
+    font-size:24px;
+}
+
+.profile p{
+    color:#777;
+    margin-top:8px;
+}
+
+.story h3{
+    color:#00eaff;
+    font-family:Georgia,serif;
+    font-size:30px;
+    margin-bottom:20px;
+}
+
+.story p{
+    color:#aaa;
+    line-height:1.8;
+    margin-bottom:15px;
+}
+
+.grid{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.project{
+    background:#101010;
+    padding:30px;
+    border:1px solid #252525;
+    border-radius:20px;
+}
+
+.project:hover{
+    border-color:#00eaff;
+}
+
+.project h3{
+    color:#00eaff;
+    margin:20px 0 10px;
+}
+
+.project p{
+    color:#999;
+    line-height:1.7;
+}
+
+.skills{
+    max-width:800px;
+    margin:auto;
+}
+
+.skill{
+    margin-bottom:25px;
+}
+
+.skill-top{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:8px;
+}
+
+.skill-top span:last-child{
+    color:#00eaff;
+}
+
+.bar{
+    height:9px;
+    background:#222;
+    border-radius:20px;
+}
+
+.progress{
+    height:100%;
+    background:#00eaff;
+    border-radius:20px;
+}
+
+.aim{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+    background:#101010;
+    border:1px solid #00eaff;
+    border-radius:25px;
+    padding:60px 25px;
+    box-shadow:0 0 40px rgba(0,234,255,.1);
+}
+
+.aim h2{
+    color:#00eaff;
+    font-family:Georgia,serif;
+    font-size:clamp(50px,8vw,90px);
+    font-style:italic;
+    margin:20px 0;
+}
+
+.aim p{
+    color:#999;
+    line-height:1.8;
+}
+
+.motto{
+    margin-top:25px;
+    color:white !important;
+    font-weight:bold;
+}
+
+.gallery{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.photo{
+    height:450px;
+    overflow:hidden;
+    border-radius:20px;
+    border:1px solid #252525;
+    background:#111;
+}
+
+.photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.photo:hover{
+    border-color:#00eaff;
+}
+
+.social{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.social a{
+    color:white;
+    text-decoration:none;
+    border:1px solid #333;
+    padding:14px 22px;
+    border-radius:30px;
+}
+
+.social a:hover{
+    color:#00eaff;
+    border-color:#00eaff;
+}
+
+.contact{
+    max-width:600px;
+    margin:auto;
+    text-align:center;
+}
+
+.contact-box{
+    margin-top:25px;
+    padding:30px;
+    background:#101010;
+    border:1px solid #252525;
+    border-radius:20px;
+}
+
+.contact-box h3{
+    color:#00eaff;
+    margin-bottom:8px;
+}
+
+.contact-box p{
+    color:#999;
+    margin-bottom:20px;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    border-top:1px solid #222;
+    color:#666;
+}
+
+footer span{
+    color:#00eaff;
+}
+
+@media(max-width:800px){
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .about{
+        grid-template-columns:1fr;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .gallery{
+        grid-template-columns:1fr;
+    }
+
+    .photo{
+        height:500px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">MICHAEL.</div>
+
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#aim">Aim</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+
+<section class="hero" id="home">
+
+<div>
+
+<small>
+KORESH MICHAEL • PERSONAL WEBSITE
+</small>
+
+<h1>
+KORESH
+<span>MICHAEL</span>
+</h1>
+
+<div class="future">
+
+<small>MY FUTURE PLAN IS</small>
+
+BIG.
+
+</div>
+
+<p>
+Create. Code. Dream. Serve.<br>
+Building my future through creativity,
+technology and purpose.
+</p>
+
+<a class="btn" href="#gallery">
+VIEW MY PHOTOS
+</a>
+
+<a class="btn" href="#projects">
+MY PROJECTS
+</a>
+
+</div>
+
+</section>
+
+
+<section id="about">
+
+<div class="title">
+
+<small>WHO AM I?</small>
+
+<h2>About Me</h2>
+
+</div>
+
+<div class="about">
+
+<div class="card profile">
+
+<div class="circle">
+KM
+</div>
+
+<h3>Koresh Michael</h3>
+
+<p>CSE Student • Creator</p>
+
+</div>
+
+<div class="card story">
+
+<h3>My Story</h3>
+
+<p>
+Hello! I'm <b>Koresh Michael</b>,
+a Computer Science Engineering student
+interested in technology, editing,
+creativity and web development.
+</p>
+
+<p>
+I enjoy learning new technologies
+and creating digital projects.
+</p>
+
+<p>
+My goal is to keep learning,
+improving and building a successful future.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="projects">
+
+<div class="title">
+
+<small>MY WORK</small>
+
+<h2>Projects</h2>
+
+</div>
+
+<div class="grid">
+
+<div class="project">
+<h3>🎓 Campus Connect</h3>
+<p>
+A student platform concept for
+notes, timetable and announcements.
+</p>
+</div>
+
+<div class="project">
+<h3>💬 ChatVerse</h3>
+<p>
+A social communication application
+concept for digital interaction.
+</p>
+</div>
+
+<div class="project">
+<h3>🌐 Personal Website</h3>
+<p>
+My personal website to showcase
+my skills, projects and dreams.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="skills">
+
+<div class="title">
+
+<small>MY TOOLKIT</small>
+
+<h2>Skills</h2>
+
+</div>
+
+<div class="skills">
+
+<div class="skill">
+
+<div class="skill-top">
+<span>HTML</span>
+<span>90%</span>
+</div>
+
+<div class="bar">
+<div class="progress" style="width:90%"></div>
+</div>
+
+</div>
+
+<div class="skill">
+
+<div class="skill-top">
+<span>CSS</span>
+<span>85%</span>
+</div>
+
+<div class="bar">
+<div class="progress" style="width:85%"></div>
+</div>
+
+</div>
+
+<div class="skill">
+
+<div class="skill-top">
+<span>Java</span>
+<span>75%</span>
+</div>
+
+<div class="bar">
+<div class="progress" style="width:75%"></div>
+</div>
+
+</div>
+
+<div class="skill">
+
+<div class="skill-top">
+<span>C / C++</span>
+<span>75%</span>
+</div>
+
+<div class="bar">
+<div class="progress" style="width:75%"></div>
+</div>
+
+</div>
+
+<div class="skill">
+
+<div class="skill-top">
+<span>Python</span>
+<span>65%</span>
+</div>
+
+<div class="bar">
+<div class="progress" style="width:65%"></div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="aim">
+
+<div class="title">
+
+<small>MY DREAM • MY DESTINATION</small>
+
+<h2>My Future</h2>
+
+</div>
+
+<div class="aim">
+
+<small>ONE DREAM</small>
+
+<h2>IAS OFFICER</h2>
+
+<p>
+My dream is to become an IAS Officer
+and serve people with honesty,
+dedication and responsibility.
+</p>
+
+<p class="motto">
+DREAM BIG • WORK HARD • NEVER GIVE UP
+</p>
+
+</div>
+
+</section>
+
+
+<section id="gallery">
+
+<div class="title">
+
+<small>MY VISUAL WORLD</small>
+
+<h2>My Gallery</h2>
+
+<p>My
