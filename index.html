@@ -3,993 +3,876 @@
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Koresh Michael | CSE Student</title>
-
-    <meta name="description"
-          content="Koresh Michael - CSE Student, Developer and future IAS Officer.">
-
-    <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #080808;
-            color: white;
-        }
-
-        /* NAVIGATION */
-
-        nav {
-            background-color: #111;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .logo {
-            color: #00eaff;
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-        }
-
-        nav a:hover {
-            color: #00eaff;
-        }
-
-        /* HOME */
-
-        #home {
-            min-height: 90vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 30px;
-        }
-
-        .home-box {
-            max-width: 800px;
-        }
-
-        .home-box h1 {
-            font-size: 60px;
-            margin: 20px 0;
-        }
-
-        .home-box h1 span {
-            color: #00eaff;
-        }
-
-        .home-box h2 {
-            color: #aaa;
-            margin-bottom: 20px;
-        }
-
-        .home-box p {
-            color: #bbb;
-            line-height: 1.7;
-        }
-
-        .button {
-            display: inline-block;
-            margin: 25px 10px;
-            padding: 12px 22px;
-            border-radius: 25px;
-            text-decoration: none;
-            border: 1px solid #00eaff;
-            color: #00eaff;
-        }
-
-        .button:hover {
-            background-color: #00eaff;
-            color: black;
-        }
-
-        /* COMMON SECTION */
-
-        section {
-            padding: 80px 8%;
-        }
-
-        .heading {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .heading h2 {
-            font-size: 38px;
-            color: #00eaff;
-        }
-
-        .heading p {
-            color: #888;
-            margin-top: 8px;
-        }
-
-        /* BIO */
-
-        .bio {
-            max-width: 850px;
-            margin: auto;
-            text-align: center;
-        }
-
-        .bio p {
-            color: #bbb;
-            line-height: 1.9;
-            font-size: 17px;
-            margin-bottom: 15px;
-        }
-
-        /* EDUCATION */
-
-        .education {
-            max-width: 850px;
-            margin: auto;
-        }
-
-        .box {
-            background-color: #111;
-            border: 1px solid #333;
-            padding: 25px;
-            margin-bottom: 20px;
-            border-radius: 12px;
-        }
-
-        .box:hover {
-            border-color: #00eaff;
-        }
-
-        .box h3 {
-            color: #00eaff;
-            margin-bottom: 12px;
-        }
-
-        .box p {
-            color: #bbb;
-            line-height: 1.6;
-        }
-
-        /* MY AIM */
-
-        .aim-box {
-            max-width: 850px;
-            margin: auto;
-            padding: 45px 25px;
-            text-align: center;
-            background-color: #111;
-            border: 2px solid #00eaff;
-            border-radius: 20px;
-            box-shadow: 0 0 30px rgba(0, 234, 255, 0.20);
-        }
-
-        .aim-box h3 {
-            color: #888;
-            font-size: 18px;
-            letter-spacing: 3px;
-            margin-bottom: 15px;
-        }
-
-        .aim-box h2 {
-            font-size: 55px;
-            color: #00eaff;
-            margin-bottom: 20px;
-        }
-
-        .aim-box p {
-            color: #bbb;
-            font-size: 17px;
-            line-height: 1.8;
-            margin-bottom: 15px;
-        }
-
-        .aim-box .dream {
-            color: white;
-            font-size: 20px;
-            font-weight: bold;
-        }
-
-        /* SKILLS */
-
-        .skills {
-            max-width: 800px;
-            margin: auto;
-        }
-
-        .skill {
-            margin-bottom: 25px;
-        }
-
-        .skill-name {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 8px;
-        }
-
-        .skill-name span:last-child {
-            color: #00eaff;
-        }
-
-        .bar {
-            height: 10px;
-            background-color: #222;
-            border-radius: 10px;
-        }
-
-        .progress {
-            height: 10px;
-            background-color: #00eaff;
-            border-radius: 10px;
-        }
-
-        /* PROJECTS */
-
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 20px;
-            max-width: 1000px;
-            margin: auto;
-        }
-
-        .project {
-            background-color: #111;
-            padding: 25px;
-            border: 1px solid #333;
-            border-radius: 12px;
-        }
-
-        .project:hover {
-            border-color: #00eaff;
-        }
-
-        .project h3 {
-            color: #00eaff;
-            margin: 15px 0;
-        }
-
-        .project p {
-            color: #aaa;
-            line-height: 1.6;
-        }
-
-        .icon {
-            font-size: 35px;
-        }
-
-        /* CERTIFICATES */
-
-        .certificates {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .certificate {
-            background-color: #111;
-            padding: 20px 30px;
-            border: 1px solid #333;
-            border-radius: 10px;
-        }
-
-        .certificate span {
-            color: #00eaff;
-        }
-
-        /* SOCIAL MEDIA */
-
-        .social {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .social a {
-            color: white;
-            text-decoration: none;
-            border: 1px solid #333;
-            padding: 12px 20px;
-            border-radius: 25px;
-        }
-
-        .social a:hover {
-            color: #00eaff;
-            border-color: #00eaff;
-        }
-
-        /* CONTACT */
-
-        .contact {
-            max-width: 650px;
-            margin: auto;
-            text-align: center;
-        }
-
-        .contact-box {
-            background-color: #111;
-            padding: 25px;
-            margin-top: 25px;
-            border-radius: 12px;
-            border: 1px solid #333;
-        }
-
-        .contact-box h3 {
-            color: #00eaff;
-            margin-bottom: 8px;
-        }
-
-        .contact-box p {
-            color: #bbb;
-            margin-bottom: 20px;
-        }
-
-        /* FOOTER */
-
-        footer {
-            text-align: center;
-            padding: 25px;
-            background-color: #111;
-            color: #777;
-        }
-
-        footer span {
-            color: #00eaff;
-        }
-
-        /* MOBILE */
-
-        @media (max-width: 700px) {
-
-            nav {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .home-box h1 {
-                font-size: 45px;
-            }
-
-            .aim-box h2 {
-                font-size: 40px;
-            }
-
-            section {
-                padding: 60px 5%;
-            }
-
-        }
-
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Koresh Michael | Creative Developer</title>
+
+<meta name="description"
+content="Koresh Michael - CSE Student, Creative Developer and Future IAS Officer.">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#050505;
+    color:white;
+}
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(5,5,5,.92);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid #222;
+}
+
+.logo{
+    color:#00eaff;
+    font-size:22px;
+    font-weight:bold;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:20px;
+}
+
+nav a{
+    color:#aaa;
+    text-decoration:none;
+    font-size:14px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#00eaff;
+}
+
+#home{
+    min-height:92vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+    background:
+    radial-gradient(circle at center,
+    rgba(0,234,255,.14),
+    transparent 38%),
+    #050505;
+}
+
+#home:before{
+    content:"";
+    position:absolute;
+    width:550px;
+    height:550px;
+    border:1px solid rgba(0,234,255,.15);
+    border-radius:50%;
+    animation:rotate 12s linear infinite;
+}
+
+.hero{
+    position:relative;
+    z-index:2;
+    max-width:1000px;
+    padding:30px 20px;
+}
+
+.tag{
+    color:#00eaff;
+    letter-spacing:4px;
+    font-size:13px;
+    margin-bottom:25px;
+    animation:fade 1s ease;
+}
+
+.hero h1{
+    font-size:clamp(60px,12vw,145px);
+    line-height:.9;
+    font-weight:900;
+    letter-spacing:-5px;
+    margin-bottom:30px;
+    animation:fade 1.2s ease;
+}
+
+.hero h1 span{
+    display:block;
+    color:transparent;
+    -webkit-text-stroke:1px #00eaff;
+    text-shadow:0 0 30px rgba(0,234,255,.25);
+}
+
+.hero h2{
+    color:#ddd;
+    font-size:25px;
+    margin-bottom:20px;
+}
+
+.hero h2 span{
+    color:#00eaff;
+}
+
+.hero p{
+    color:#888;
+    line-height:1.7;
+    max-width:650px;
+    margin:auto;
+}
+
+.buttons{
+    margin-top:35px;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:15px 28px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.primary{
+    background:#00eaff;
+    color:#000;
+    box-shadow:0 0 25px rgba(0,234,255,.3);
+}
+
+.primary:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 40px rgba(0,234,255,.6);
+}
+
+.secondary{
+    color:white;
+    border:1px solid #333;
+}
+
+.secondary:hover{
+    color:#00eaff;
+    border-color:#00eaff;
+    transform:translateY(-5px);
+}
+
+.stats{
+    margin-top:60px;
+    display:flex;
+    justify-content:center;
+    gap:70px;
+}
+
+.stats strong{
+    display:block;
+    color:#00eaff;
+    font-size:22px;
+}
+
+.stats small{
+    color:#666;
+    letter-spacing:3px;
+}
+
+section{
+    padding:90px 8%;
+}
+
+.heading{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.heading p{
+    color:#777;
+    letter-spacing:3px;
+}
+
+.heading h2{
+    color:#00eaff;
+    font-size:40px;
+    margin-top:10px;
+}
+
+.bio{
+    max-width:850px;
+    margin:auto;
+    text-align:center;
+}
+
+.bio p{
+    color:#aaa;
+    line-height:1.9;
+    font-size:17px;
+    margin-bottom:18px;
+}
+
+.box{
+    max-width:850px;
+    margin:0 auto 20px;
+    padding:25px;
+    background:#0d0d0d;
+    border:1px solid #222;
+    border-radius:15px;
+    transition:.3s;
+}
+
+.box:hover{
+    border-color:#00eaff;
+    transform:translateY(-5px);
+}
+
+.box h3{
+    color:#00eaff;
+    margin-bottom:12px;
+}
+
+.box p{
+    color:#aaa;
+    line-height:1.7;
+}
+
+.aim{
+    max-width:850px;
+    margin:auto;
+    padding:50px 25px;
+    text-align:center;
+    background:#0d0d0d;
+    border:1px solid #00eaff;
+    border-radius:25px;
+    box-shadow:0 0 35px rgba(0,234,255,.15);
+}
+
+.aim h3{
+    color:#777;
+    letter-spacing:3px;
+}
+
+.aim h2{
+    color:#00eaff;
+    font-size:55px;
+    margin:20px 0;
+}
+
+.aim p{
+    color:#aaa;
+    line-height:1.8;
+}
+
+.skills{
+    max-width:800px;
+    margin:auto;
+}
+
+.skill{
+    margin-bottom:25px;
+}
+
+.skill-name{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:8px;
+}
+
+.skill-name span:last-child{
+    color:#00eaff;
+}
+
+.bar{
+    height:9px;
+    background:#222;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.progress{
+    height:100%;
+    background:#00eaff;
+    border-radius:10px;
+}
+
+.projects{
+    max-width:1000px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:20px;
+}
+
+.project{
+    padding:30px;
+    background:#0d0d0d;
+    border:1px solid #222;
+    border-radius:18px;
+    transition:.3s;
+}
+
+.project:hover{
+    border-color:#00eaff;
+    transform:translateY(-8px);
+}
+
+.project .icon{
+    font-size:35px;
+}
+
+.project h3{
+    color:#00eaff;
+    margin:15px 0;
+}
+
+.project p{
+    color:#999;
+    line-height:1.7;
+}
+
+.certificates,
+.social{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.certificate,
+.social a{
+    background:#0d0d0d;
+    border:1px solid #222;
+    padding:15px 22px;
+    border-radius:30px;
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.certificate span{
+    color:#00eaff;
+}
+
+.social a:hover,
+.certificate:hover{
+    border-color:#00eaff;
+    color:#00eaff;
+}
+
+.contact{
+    max-width:650px;
+    margin:auto;
+    text-align:center;
+}
+
+.contact p{
+    color:#999;
+    line-height:1.7;
+}
+
+.contact-box{
+    margin-top:25px;
+    padding:30px;
+    background:#0d0d0d;
+    border:1px solid #222;
+    border-radius:18px;
+}
+
+.contact-box h3{
+    color:#00eaff;
+    margin:15px 0 8px;
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    background:#0b0b0b;
+    color:#666;
+}
+
+footer span{
+    color:#00eaff;
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes rotate{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+@media(max-width:700px){
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero h1{
+        letter-spacing:-2px;
+    }
+
+    .hero h2{
+        font-size:19px;
+    }
+
+    .stats{
+        gap:30px;
+    }
+
+    .aim h2{
+        font-size:40px;
+    }
+
+    section{
+        padding:65px 5%;
+    }
+
+}
+
+</style>
 
 </head>
 
-
 <body>
 
+<nav>
 
-    <!-- NAVIGATION -->
+<div class="logo">I AM KORESH</div>
 
-    <nav>
+<ul>
 
-        <div class="logo">
-            I AM KORESH
-        </div>
+<li><a href="#home">Home</a></li>
+<li><a href="#bio">Bio</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#aim">Aim</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
 
-        <ul>
+</ul>
 
-            <li>
-                <a href="#home">Home</a>
-            </li>
+</nav>
 
-            <li>
-                <a href="#bio">Bio</a>
-            </li>
+<section id="home">
 
-            <li>
-                <a href="#education">Education</a>
-            </li>
+<div class="hero">
 
-            <li>
-                <a href="#aim">My Aim</a>
-            </li>
+<div class="tag">
+⚡ CSE STUDENT • CREATOR • DREAMER
+</div>
 
-            <li>
-                <a href="#skills">Skills</a>
-            </li>
+<h1>
+KORESH
+<span>MICHAEL</span>
+</h1>
 
-            <li>
-                <a href="#projects">Projects</a>
-            </li>
+<h2>
+Creative Editor <span>•</span>
+Developer <span>•</span>
+Future IAS Officer
+</h2>
 
-            <li>
-                <a href="#contact">Contact</a>
-            </li>
+<p>
+I turn ideas into visuals, code and meaningful digital experiences.
+Building my future with creativity, technology and determination.
+</p>
 
-        </ul>
+<div class="buttons">
 
-    </nav>
+<a href="#projects" class="btn primary">
+🚀 Explore My Work
+</a>
 
+<a href="#contact" class="btn secondary">
+Let's Connect →
+</a>
 
-    <!-- HOME -->
+</div>
 
-    <section id="home">
+<div class="stats">
 
-        <div class="home-box">
+<div>
+<strong>01</strong>
+<small>CREATIVE</small>
+</div>
 
-            <p>
-                ⚡ CSE STUDENT • DEVELOPER • DREAMER
-            </p>
+<div>
+<strong>02</strong>
+<small>TECH</small>
+</div>
 
-            <h1>
-                KORESH <span>MICHAEL</span>
-            </h1>
+<div>
+<strong>03</strong>
+<small>DREAM</small>
+</div>
 
-            <h2>
-                Computer Science Engineering Student
-            </h2>
+</div>
 
-            <p>
-                Building my future with Code, Creativity and Technology.
-                Welcome to my personal website.
-            </p>
+</div>
 
-            <a href="#bio" class="button">
-                Explore Me
-            </a>
+</section>
 
-            <a href="#projects" class="button">
-                My Projects
-            </a>
+<section id="bio">
 
-        </div>
+<div class="heading">
+<p>WHO AM I?</p>
+<h2>My Bio</h2>
+</div>
 
-    </section>
+<div class="bio">
 
+<p>
+Hello! I'm <b>Koresh Michael</b>, a Computer Science Engineering student
+interested in programming, technology, editing and creative digital work.
+</p>
 
-    <!-- BIO -->
+<p>
+I enjoy learning new technologies and building projects that turn ideas
+into useful digital experiences.
+</p>
 
-    <section id="bio">
+<p>
+My goal is to keep improving myself, build meaningful technology and
+work towards my dream of serving society.
+</p>
 
-        <div class="heading">
+</div>
 
-            <p>WHO AM I?</p>
+</section>
 
-            <h2>
-                My Bio
-            </h2>
+<section id="education">
 
-        </div>
+<div class="heading">
+<p>MY JOURNEY</p>
+<h2>Education</h2>
+</div>
 
+<div class="box">
 
-        <div class="bio">
+<h3>🎓 B.E. Computer Science and Engineering</h3>
 
-            <p>
-                Hello! I'm <b>Koresh Michael</b>, a Computer Science
-                Engineering student interested in programming,
-                technology and web development.
-            </p>
+<p><b>Tagore Institute of Engineering and Technology</b></p>
 
-            <p>
-                I am learning new technologies and improving my
-                programming skills through college studies and
-                personal projects.
-            </p>
+<p>
+Currently studying Computer Science and Engineering.
+</p>
 
-            <p>
-                My goal is to become a good software developer
-                and create useful technology projects.
-            </p>
+</div>
 
-        </div>
+<div class="box">
 
-    </section>
+<h3>💻 Programming & Technology</h3>
 
+<p>
+Learning programming, web development, software development
+and modern technologies.
+</p>
 
-    <!-- EDUCATION -->
+</div>
 
-    <section id="education">
+</section>
 
-        <div class="heading">
+<section id="aim">
 
-            <p>MY JOURNEY</p>
+<div class="heading">
 
-            <h2>
-                Education
-            </h2>
+<p>MY DREAM • MY DESTINATION</p>
 
-        </div>
+<h2>My Aim</h2>
 
+</div>
 
-        <div class="education">
+<div class="aim">
 
-            <div class="box">
+<h3>🎯 MY AIM IS</h3>
 
-                <h3>
-                    🎓 B.E. Computer Science and Engineering
-                </h3>
+<h2>IAS OFFICER</h2>
 
-                <p>
-                    <b>
-                        Tagore Institute of Engineering and Technology
-                    </b>
-                </p>
+<p>
+My dream is to become an IAS Officer and serve the people with honesty,
+dedication and responsibility.
+</p>
 
-                <p>
-                    Currently studying Computer Science and Engineering.
-                </p>
+<br>
 
-            </div>
+<p>
+I want to work for society, help people and contribute to the development
+of our country.
+</p>
 
+<br>
 
-            <div class="box">
+<p><b>DREAM BIG • WORK HARD • NEVER GIVE UP 🔥</b></p>
 
-                <h3>
-                    💻 Programming and Technology
-                </h3>
+</div>
 
-                <p>
-                    Learning programming languages, web development,
-                    software development and modern technologies.
-                </p>
+</section>
 
-            </div>
+<section id="skills">
 
-        </div>
+<div class="heading">
 
-    </section>
+<p>WHAT I KNOW</p>
 
+<h2>My Skills</h2>
 
-    <!-- MY AIM -->
+</div>
 
-    <section id="aim">
+<div class="skills">
 
-        <div class="heading">
+<div class="skill">
 
-            <p>
-                MY DREAM • MY DESTINATION
-            </p>
+<div class="skill-name">
+<span>HTML</span>
+<span>90%</span>
+</div>
 
-            <h2>
-                My Aim
-            </h2>
+<div class="bar">
+<div class="progress" style="width:90%;"></div>
+</div>
 
-        </div>
+</div>
 
+<div class="skill">
 
-        <div class="aim-box">
+<div class="skill-name">
+<span>CSS</span>
+<span>85%</span>
+</div>
 
-            <h3>
-                🎯 MY AIM IS
-            </h3>
+<div class="bar">
+<div class="progress" style="width:85%;"></div>
+</div>
 
-            <h2>
-                IAS OFFICER
-            </h2>
+</div>
 
-            <p>
-                My dream is to become an IAS Officer
-                and serve the people with honesty,
-                dedication and responsibility.
-            </p>
+<div class="skill">
 
-            <p>
-                I want to work for society, help people
-                and contribute to the development of
-                our country.
-            </p>
+<div class="skill-name">
+<span>Java</span>
+<span>75%</span>
+</div>
 
-            <p class="dream">
-                DREAM BIG • WORK HARD • NEVER GIVE UP 🔥
-            </p>
+<div class="bar">
+<div class="progress" style="width:75%;"></div>
+</div>
 
-        </div>
+</div>
 
-    </section>
+<div class="skill">
 
+<div class="skill-name">
+<span>C / C++</span>
+<span>75%</span>
+</div>
 
-    <!-- SKILLS -->
+<div class="bar">
+<div class="progress" style="width:75%;"></div>
+</div>
 
-    <section id="skills">
+</div>
 
-        <div class="heading">
+<div class="skill">
 
-            <p>
-                WHAT I KNOW
-            </p>
+<div class="skill-name">
+<span>Python</span>
+<span>65%</span>
+</div>
 
-            <h2>
-                My Skills
-            </h2>
+<div class="bar">
+<div class="progress" style="width:65%;"></div>
+</div>
 
-        </div>
+</div>
 
+</div>
 
-        <div class="skills">
+</section>
 
+<section id="projects">
 
-            <div class="skill">
+<div class="heading">
 
-                <div class="skill-name">
+<p>MY WORK</p>
 
-                    <span>
-                        HTML
-                    </span>
+<h2>Projects</h2>
 
-                    <span>
-                        90%
-                    </span>
+</div>
 
-                </div>
+<div class="projects">
 
-                <div class="bar">
+<div class="project">
 
-                    <div class="progress"
-                         style="width:90%;">
-                    </div>
+<div class="icon">🎓</div>
 
-                </div>
+<h3>Campus Connect</h3>
 
-            </div>
+<p>
+Student platform idea for notes, timetable and college announcements.
+</p>
 
+</div>
 
-            <div class="skill">
+<div class="project">
 
-                <div class="skill-name">
+<div class="icon">💬</div>
 
-                    <span>
-                        CSS
-                    </span>
+<h3>ChatVerse</h3>
 
-                    <span>
-                        85%
-                    </span>
+<p>
+Social communication application concept with messaging features.
+</p>
 
-                </div>
+</div>
 
-                <div class="bar">
+<div class="project">
 
-                    <div class="progress"
-                         style="width:85%;">
-                    </div>
+<div class="icon">🌐</div>
 
-                </div>
+<h3>Personal Website</h3>
 
-            </div>
+<p>
+My personal portfolio website showcasing my education, skills and work.
+</p>
 
+</div>
 
-            <div class="skill">
+</div>
 
-                <div class="skill-name">
+</section>
 
-                    <span>
-                        Java
-                    </span>
+<section>
 
-                    <span>
-                        75%
-                    </span>
+<div class="heading">
 
-                </div>
+<p>MY ACHIEVEMENTS</p>
 
-                <div class="bar">
+<h2>Certificates</h2>
 
-                    <div class="progress"
-                         style="width:75%;">
-                    </div>
+</div>
 
-                </div>
+<div class="certificates">
 
-            </div>
+<div class="certificate">
+☕ <span>Java Programming</span>
+</div>
 
+<div class="certificate">
+💻 <span>Computer Science</span>
+</div>
 
-            <div class="skill">
+<div class="certificate">
+🚀 <span>Technology & Development</span>
+</div>
 
-                <div class="skill-name">
+</div>
 
-                    <span>
-                        C / C++
-                    </span>
+</section>
 
-                    <span>
-                        75%
-                    </span>
+<section>
 
-                </div>
+<div class="heading">
 
-                <div class="bar">
+<p>CONNECT WITH ME</p>
 
-                    <div class="progress"
-                         style="width:75%;">
-                    </div>
+<h2>Social Media</h2>
 
-                </div>
+</div>
 
-            </div>
+<div class="social">
 
+<a href="https://www.instagram.com/nellai.__.michael" target="_blank">
+📸 Instagram
+</a>
 
-            <div class="skill">
+<a href="https://www.linkedin.com/in/koresh-michael-4b0516415" target="_blank">
+💼 LinkedIn
+</a>
 
-                <div class="skill-name">
+<a href="https://github.com/koreshmichael/Koresh-Michael-website" target="_blank">
+🐙 GitHub
+</a>
 
-                    <span>
-                        Python
-                    </span>
+<a href="https://youtube.com/@nellai._.michael" target="_blank">
+▶️ YouTube
+</a>
 
-                    <span>
-                        65%
-                    </span>
+</div>
 
-                </div>
+</section>
 
-                <div class="bar">
+<section id="contact">
 
-                    <div class="progress"
-                         style="width:65%;">
-                    </div>
+<div class="heading">
 
-                </div>
+<p>GET IN TOUCH</p>
 
-            </div>
+<h2>Contact Me</h2>
 
-        </div>
+</div>
 
-    </section>
+<div class="contact">
 
+<p>
+Have a project idea or want to connect?
+Feel free to contact me.
+</p>
 
-    <!-- PROJECTS -->
+<div class="contact-box">
 
-    <section id="projects">
+<h3>📧 Email</h3>
 
-        <div class="heading">
+<p>koreshmichael74@gmail.com</p>
 
-            <p>
-                MY WORK
-            </p>
+<h3>📍 Location</h3>
 
-            <h2>
-                Projects
-            </h2>
+<p>Tamil Nadu, India</p>
 
-        </div>
+</div>
 
+</div>
 
-        <div class="projects">
+</section>
 
+<footer>
 
-            <div class="project">
+<p>
+© 2026 <span>Koresh Michael</span>. Built with Code.
+</p>
 
-                <div class="icon">
-                    🎓
-                </div>
-
-                <h3>
-                    Campus Connect
-                </h3>
-
-                <p>
-                    A student platform idea for Notes,
-                    Timetable and College Announcements.
-                </p>
-
-            </div>
-
-
-            <div class="project">
-
-                <div class="icon">
-                    💬
-                </div>
-
-                <h3>
-                    ChatVerse
-                </h3>
-
-                <p>
-                    A social communication application idea
-                    with messaging and social features.
-                </p>
-
-            </div>
-
-
-            <div class="project">
-
-                <div class="icon">
-                    🌐
-                </div>
-
-                <h3>
-                    Personal Website
-                </h3>
-
-                <p>
-                    My personal portfolio website to show
-                    my education, skills and projects.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- CERTIFICATES -->
-
-    <section>
-
-        <div class="heading">
-
-            <p>
-                MY ACHIEVEMENTS
-            </p>
-
-            <h2>
-                Certificates
-            </h2>
-
-        </div>
-
-
-        <div class="certificates">
-
-            <div class="certificate">
-                ☕ <span>Java Programming</span>
-            </div>
-
-            <div class="certificate">
-                💻 <span>Computer Science</span>
-            </div>
-
-            <div class="certificate">
-                🚀 <span>Technology and Development</span>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- SOCIAL MEDIA -->
-
-    <section>
-
-        <div class="heading">
-
-            <p>
-                CONNECT WITH ME
-            </p>
-
-            <h2>
-                Social Media
-            </h2>
-
-        </div>
-
-
-        <div class="social">
-
-            <a href="https://www.instagram.com/nellai.__.michael"
-               target="_blank">
-                📸 Instagram
-            </a>
-
-            <a href="https://www.linkedin.com/in/koresh-michael-4b0516415"
-               target="_blank">
-                💼 LinkedIn
-            </a>
-
-            <a href="https://github.com/koreshmichael/Koresh-Michael-website"
-               target="_blank">
-                🐙 GitHub
-            </a>
-
-            <a href="https://youtube.com/@nellai._.michael"
-               target="_blank">
-                ▶️ YouTube
-            </a>
-
-        </div>
-
-    </section>
-
-
-    <!-- CONTACT -->
-
-    <section id="contact">
-
-        <div class="heading">
-
-            <p>
-                GET IN TOUCH
-            </p>
-
-            <h2>
-                Contact Me
-            </h2>
-
-        </div>
-
-
-        <div class="contact">
-
-            <p>
-                Have a project idea or want to connect?
-                Feel free to contact me.
-            </p>
-
-
-            <div class="contact-box">
-
-                <h3>
-                    📧 Email
-                </h3>
-
-                <p>
-                    koreshmichael74@gmail.com
-                </p>
-
-
-                <h3>
-                    📍 Location
-                </h3>
-
-                <p>
-                    Tamil Nadu, India
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- FOOTER -->
-
-    <footer>
-
-        <p>
-            © 2026
-            <span>
-                Koresh Michael
-            </span>.
-            Built with Code.
-        </p>
-
-    </footer>
-
+</footer>
 
 </body>
 
